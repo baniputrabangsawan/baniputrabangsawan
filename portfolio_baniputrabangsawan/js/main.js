@@ -519,7 +519,7 @@ document.addEventListener('click', (e) => {
 
 // CSS animations for slideInRight/slideOutRight are now handled by emailKonfigurasi.js
 
-// Enhanced Navigation functionality for mobile
+// Enhanced mobile navigation with improved spacing and touch interactions
 function initializeNavigation() {
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('navMenu');
@@ -528,12 +528,15 @@ function initializeNavigation() {
     const themeToggle = document.getElementById('themeToggle');
     
     // Create overlay for mobile menu
-    const overlay = document.createElement('div');
-    overlay.className = 'nav-menu-overlay';
-    overlay.id = 'navMenuOverlay';
-    document.body.appendChild(overlay);
+    let overlay = document.getElementById('navMenuOverlay');
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.className = 'nav-menu-overlay';
+        overlay.id = 'navMenuOverlay';
+        document.body.appendChild(overlay);
+    }
 
-    // Hamburger menu toggle with improved functionality
+    // Enhanced hamburger menu toggle
     hamburger.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -545,51 +548,127 @@ function initializeNavigation() {
         closeMobileMenu();
     });
 
-    // Close menu when clicking on nav link
+    // Close menu when clicking on nav link with smooth transition
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            // Don't prevent default for navigation
-            closeMobileMenu();
+            // Add smooth closing animation
+            if (window.innerWidth <= 768) {
+                setTimeout(() => {
+                    closeMobileMenu();
+                }, 100);
+            }
         });
     });
 
-    // Close menu when pressing Escape key
+    // Enhanced keyboard navigation
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && navMenu.classList.contains('active')) {
             closeMobileMenu();
         }
+        
+        // Tab navigation within mobile menu
+        if (e.key === 'Tab' && navMenu.classList.contains('active')) {
+            const focusableElements = navMenu.querySelectorAll('.nav-link');
+            const firstElement = focusableElements[0];
+            const lastElement = focusableElements[focusableElements.length - 1];
+            
+            if (e.shiftKey && document.activeElement === firstElement) {
+                e.preventDefault();
+                lastElement.focus();
+            } else if (!e.shiftKey && document.activeElement === lastElement) {
+                e.preventDefault();
+                firstElement.focus();
+            }
+        }
     });
 
-    // Header scroll effect
+    // Improved header scroll effect with mobile optimization
     let lastScrollY = window.scrollY;
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
+    let ticking = false;
+    
+    function updateHeader() {
+        const scrollY = window.scrollY;
+        
+        if (scrollY > 100) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
         }
         
-        // Hide mobile menu on scroll (optional)
-        if (Math.abs(window.scrollY - lastScrollY) > 50 && navMenu.classList.contains('active')) {
+        // Auto-close mobile menu on significant scroll
+        if (Math.abs(scrollY - lastScrollY) > 100 && navMenu.classList.contains('active')) {
             closeMobileMenu();
         }
-        lastScrollY = window.scrollY;
+        
+        lastScrollY = scrollY;
+        ticking = false;
+    }
+    
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(updateHeader);
+            ticking = true;
+        }
+    }, { passive: true });
+
+    // Enhanced theme toggle with better mobile UX
+    themeToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        toggleTheme();
+        
+        // Add visual feedback for mobile
+        if (window.innerWidth <= 768) {
+            themeToggle.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                themeToggle.style.transform = '';
+            }, 150);
+        }
     });
 
-    // Theme toggle
-    themeToggle.addEventListener('click', toggleTheme);
+    // Active navigation highlighting with mobile optimization
+    window.addEventListener('scroll', throttle(updateActiveNavigation, 100), { passive: true });
 
-    // Active navigation highlighting
-    window.addEventListener('scroll', updateActiveNavigation);
-
-    // Handle window resize
-    window.addEventListener('resize', () => {
+    // Handle window resize with debouncing
+    window.addEventListener('resize', debounce(() => {
         if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
             closeMobileMenu();
         }
-    });
+        
+        // Recalculate navigation spacing
+        adjustNavigationSpacing();
+    }, 250));
 
-    // Functions for mobile menu control
+    // Touch gesture improvements
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchEndX = 0;
+    let touchEndY = 0;
+
+    navMenu.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
+    }, { passive: true });
+
+    navMenu.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        touchEndY = e.changedTouches[0].screenY;
+        handleSwipeGesture();
+    }, { passive: true });
+
+    function handleSwipeGesture() {
+        const swipeThreshold = 50;
+        const swipeDistanceX = touchStartX - touchEndX;
+        const swipeDistanceY = touchStartY - touchEndY;
+        
+        // Swipe up or right to close menu
+        if ((swipeDistanceY > swipeThreshold) || (swipeDistanceX < -swipeThreshold)) {
+            if (navMenu.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        }
+    }
+
+    // Functions for mobile menu control with improved animations
     function toggleMobileMenu() {
         const isActive = hamburger.classList.contains('active');
         if (isActive) {
@@ -600,83 +679,161 @@ function initializeNavigation() {
     }
 
     function openMobileMenu() {
+        // Add opening animation
         hamburger.classList.add('active');
         navMenu.classList.add('active');
         overlay.classList.add('active');
         document.body.classList.add('menu-open');
         
-        // Focus management for accessibility
+        // ARIA attributes
         navMenu.setAttribute('aria-expanded', 'true');
         hamburger.setAttribute('aria-expanded', 'true');
         
-        // Focus first menu item
-        const firstNavLink = navMenu.querySelector('.nav-link');
-        if (firstNavLink) {
-            setTimeout(() => firstNavLink.focus(), 300);
-        }
+        // Focus management with delay for animation
+        setTimeout(() => {
+            const firstNavLink = navMenu.querySelector('.nav-link');
+            if (firstNavLink) {
+                firstNavLink.focus();
+            }
+        }, 300);
+        
+        // Animate menu items
+        const menuItems = navMenu.querySelectorAll('.nav-link');
+        menuItems.forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateX(-20px)';
+            setTimeout(() => {
+                item.style.transition = 'all 0.3s ease';
+                item.style.opacity = '1';
+                item.style.transform = 'translateX(0)';
+            }, 100 + (index * 50));
+        });
     }
 
     function closeMobileMenu() {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-        overlay.classList.remove('active');
-        document.body.classList.remove('menu-open');
+        // Add closing animation
+        const menuItems = navMenu.querySelectorAll('.nav-link');
+        menuItems.forEach((item, index) => {
+            setTimeout(() => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(-20px)';
+            }, index * 30);
+        });
         
-        // Focus management for accessibility
+        setTimeout(() => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.classList.remove('menu-open');
+            
+            // Reset menu items
+            menuItems.forEach(item => {
+                item.style.opacity = '';
+                item.style.transform = '';
+                item.style.transition = '';
+            });
+        }, 200);
+        
+        // ARIA attributes
         navMenu.setAttribute('aria-expanded', 'false');
         hamburger.setAttribute('aria-expanded', 'false');
         
-        // Return focus to hamburger button
+        // Return focus to hamburger
         hamburger.focus();
     }
+
+    // Adjust navigation spacing dynamically
+    function adjustNavigationSpacing() {
+        if (window.innerWidth <= 768) {
+            const nav = document.querySelector('.nav');
+            const logo = document.querySelector('.logo');
+            const themeToggle = document.getElementById('themeToggle');
+            const hamburger = document.getElementById('hamburger');
+            
+            // Ensure proper spacing
+            if (nav && logo && themeToggle && hamburger) {
+                nav.style.display = 'flex';
+                nav.style.justifyContent = 'space-between';
+                nav.style.alignItems = 'center';
+                nav.style.gap = '1rem';
+                
+                logo.style.marginRight = 'auto';
+                themeToggle.style.marginLeft = 'auto';
+                themeToggle.style.marginRight = '1rem';
+                hamburger.style.marginLeft = '0.5rem';
+            }
+        }
+    }
+
+    // Initialize proper spacing on load
+    adjustNavigationSpacing();
 
     // Initialize ARIA attributes
     hamburger.setAttribute('aria-expanded', 'false');
     hamburger.setAttribute('aria-controls', 'navMenu');
     hamburger.setAttribute('aria-label', 'Toggle navigation menu');
     navMenu.setAttribute('aria-expanded', 'false');
+    navMenu.setAttribute('role', 'navigation');
+    navMenu.setAttribute('aria-label', 'Main navigation');
 }
 
-// Enhanced theme toggle function
+// Enhanced theme toggle with mobile optimizations
 function toggleTheme() {
     currentTheme = currentTheme === 'light' ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', currentTheme);
     localStorage.setItem('theme', currentTheme);
     updateThemeIcon();
     
-    // Update theme toggle button text for screen readers
+    // Add smooth transition for theme change
+    document.body.style.transition = 'all 0.3s ease';
+    setTimeout(() => {
+        document.body.style.transition = '';
+    }, 300);
+    
+    // Update theme toggle button for screen readers
     const themeToggle = document.getElementById('themeToggle');
     const icon = themeToggle.querySelector('i');
     
     if (currentTheme === 'dark') {
         icon.className = 'fas fa-sun';
         themeToggle.setAttribute('aria-label', 'Switch to light mode');
+        themeToggle.title = 'Switch to light mode';
     } else {
         icon.className = 'fas fa-moon';
         themeToggle.setAttribute('aria-label', 'Switch to dark mode');
+        themeToggle.title = 'Switch to dark mode';
+    }
+    
+    // Mobile haptic feedback simulation
+    if (window.innerWidth <= 768 && 'vibrate' in navigator) {
+        navigator.vibrate(50);
     }
 }
 
 function updateThemeIcon() {
     const themeToggle = document.getElementById('themeToggle');
+    if (!themeToggle) return;
+    
     const icon = themeToggle.querySelector('i');
     
     if (currentTheme === 'dark') {
         icon.className = 'fas fa-sun';
         themeToggle.setAttribute('aria-label', 'Switch to light mode');
+        themeToggle.title = 'Switch to light mode';
     } else {
         icon.className = 'fas fa-moon';
         themeToggle.setAttribute('aria-label', 'Switch to dark mode');
+        themeToggle.title = 'Switch to dark mode';
     }
 }
 
-// Enhanced active navigation highlighting
+// Enhanced active navigation highlighting with mobile optimization
 function updateActiveNavigation() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
 
     let current = '';
-    const scrollPosition = window.scrollY + 200; // Offset for better UX
+    const scrollPosition = window.scrollY + (window.innerHeight * 0.3);
 
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
@@ -687,72 +844,120 @@ function updateActiveNavigation() {
         }
     });
 
+    // Default to home if no section is active
+    if (!current && window.scrollY < 100) {
+        current = 'home';
+    }
+
     navLinks.forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('data-section') === current || 
-            (current === '' && link.getAttribute('data-section') === 'home')) {
+        if (link.getAttribute('data-section') === current) {
             link.classList.add('active');
         }
     });
 }
 
-// Smooth scroll function with mobile optimization
+// Enhanced smooth scroll with mobile optimization
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
-    if (section) {
-        const headerHeight = document.getElementById('header').offsetHeight;
-        const targetPosition = section.offsetTop - headerHeight - 20;
-        
-        window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-        });
+    if (!section) return;
+    
+    const header = document.getElementById('header');
+    const headerHeight = header ? header.offsetHeight : 70;
+    const targetPosition = section.offsetTop - headerHeight - 20;
+    
+    // Use different scroll behavior for mobile
+    const isMobile = window.innerWidth <= 768;
+    const scrollOptions = {
+        top: targetPosition,
+        behavior: isMobile ? 'auto' : 'smooth' // Auto scroll for better mobile performance
+    };
+    
+    // For mobile, use manual smooth scroll for better control
+    if (isMobile) {
+        smoothScrollTo(targetPosition, 600);
+    } else {
+        window.scrollTo(scrollOptions);
     }
 }
 
-// Enhanced click handler for navigation
+// Custom smooth scroll function for mobile
+function smoothScrollTo(targetPosition, duration) {
+    const startPosition = window.scrollY;
+    const distance = targetPosition - startPosition;
+    let startTime = null;
+
+    function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);
+        
+        // Easing function for smooth animation
+        const ease = easeInOutCubic(progress);
+        window.scrollTo(0, startPosition + (distance * ease));
+
+        if (timeElapsed < duration) {
+            requestAnimationFrame(animation);
+        }
+    }
+    
+    requestAnimationFrame(animation);
+}
+
+// Easing function
+function easeInOutCubic(t) {
+    return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+}
+
+// Utility functions
+function throttle(func, limit) {
+    let inThrottle;
+    return function() {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    };
+}
+
+function debounce(func, wait, immediate) {
+    let timeout;
+    return function() {
+        const context = this;
+        const args = arguments;
+        const later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        const callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+}
+
+// Enhanced click handler for navigation with mobile improvements
 document.addEventListener('click', (e) => {
     if (e.target.matches('.nav-link') || e.target.matches('.hero-cta')) {
         e.preventDefault();
         const targetId = e.target.getAttribute('href').substring(1);
+        
+        // Add visual feedback for mobile
+        if (window.innerWidth <= 768) {
+            e.target.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                e.target.style.transform = '';
+            }, 100);
+        }
+        
         scrollToSection(targetId);
     }
 });
 
-// Touch gesture support for mobile menu (optional enhancement)
-let touchStartY = 0;
-let touchEndY = 0;
-
-document.addEventListener('touchstart', (e) => {
-    touchStartY = e.changedTouches[0].screenY;
-}, { passive: true });
-
-document.addEventListener('touchend', (e) => {
-    touchEndY = e.changedTouches[0].screenY;
-    handleSwipeGesture();
-}, { passive: true });
-
-function handleSwipeGesture() {
-    const swipeThreshold = 50;
-    const swipeDistance = touchStartY - touchEndY;
-    
-    // Only handle swipes when menu is open
-    const navMenu = document.getElementById('navMenu');
-    if (navMenu && navMenu.classList.contains('active')) {
-        // Swipe up to close menu
-        if (swipeDistance > swipeThreshold) {
-            const hamburger = document.getElementById('hamburger');
-            if (hamburger.classList.contains('active')) {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-                document.getElementById('navMenuOverlay').classList.remove('active');
-                document.body.classList.remove('menu-open');
-            }
-        }
-    }
-}
-
-// Improved mobile performance
+// Mobile performance optimizations
 if ('IntersectionObserver' in window) {
     const mobileOptimization = () => {
         const isMobile = window.innerWidth <= 768;
@@ -763,21 +968,107 @@ if ('IntersectionObserver' in window) {
             animatedElements.forEach(el => {
                 el.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
             });
+            
+            // Disable parallax effects on mobile
+            const parallaxElements = document.querySelectorAll('[data-parallax]');
+            parallaxElements.forEach(el => {
+                el.style.transform = 'none';
+            });
         }
     };
     
-    window.addEventListener('resize', mobileOptimization);
+    window.addEventListener('resize', debounce(mobileOptimization, 250));
     mobileOptimization(); // Run on load
 }
 
-// Ensure proper initialization
+// Mobile viewport height fix
+function setMobileViewportHeight() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+window.addEventListener('resize', debounce(setMobileViewportHeight, 250));
+setMobileViewportHeight();
+
+// Enhanced initialization with mobile focus
 document.addEventListener('DOMContentLoaded', function() {
-    // Add any additional mobile-specific initialization here
+    // Ensure hamburger has proper structure
     const hamburger = document.getElementById('hamburger');
-    if (hamburger) {
-        // Ensure hamburger has proper structure
-        if (hamburger.children.length < 3) {
-            hamburger.innerHTML = '<span></span><span></span><span></span>';
-        }
+    if (hamburger && hamburger.children.length < 3) {
+        hamburger.innerHTML = '<span></span><span></span><span></span>';
     }
+    
+    // Add mobile-specific classes
+    if (window.innerWidth <= 768) {
+        document.body.classList.add('mobile-device');
+    }
+    
+    // Prevent zoom on input focus for iOS
+    if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+        const inputs = document.querySelectorAll('input, textarea, select');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.style.fontSize = '16px';
+            });
+            input.addEventListener('blur', () => {
+                input.style.fontSize = '';
+            });
+        });
+    }
+    
+    // Initialize mobile touch events
+    initializeMobileTouchEvents();
 });
+
+// Mobile touch events initialization
+function initializeMobileTouchEvents() {
+    // Add touch feedback to buttons
+    const buttons = document.querySelectorAll('button, .btn, .nav-link, .social-link');
+    
+    buttons.forEach(button => {
+        button.addEventListener('touchstart', function() {
+            this.classList.add('touch-active');
+        }, { passive: true });
+        
+        button.addEventListener('touchend', function() {
+            setTimeout(() => {
+                this.classList.remove('touch-active');
+            }, 150);
+        }, { passive: true });
+        
+        button.addEventListener('touchcancel', function() {
+            this.classList.remove('touch-active');
+        }, { passive: true });
+    });
+}
+
+// Service Worker registration for mobile performance (optional)
+if ('serviceWorker' in navigator && window.innerWidth <= 768) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+            .then(registration => {
+                console.log('SW registered: ', registration);
+            })
+            .catch(registrationError => {
+                console.log('SW registration failed: ', registrationError);
+            });
+    });
+}
+
+// Mobile battery optimization
+if ('getBattery' in navigator) {
+    navigator.getBattery().then(battery => {
+        if (battery.level < 0.2) {
+            // Reduce animations when battery is low
+            document.body.classList.add('low-battery');
+            const style = document.createElement('style');
+            style.textContent = `
+                .low-battery * {
+                    animation-duration: 0.1s !important;
+                    transition-duration: 0.1s !important;
+                }
+            `;
+            document.head.appendChild(style);
+        }
+    });
+}
