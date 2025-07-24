@@ -7,7 +7,7 @@ const portfolioData = [
         image: "images/pomodoro.png",
         category: "web",
         tech: ["HTML", "TailwindCSS", "Javascript"],
-        demo: "#",
+        demo: "images/pomodoro.jpg",
         github: "https://github.com/baniputrabangsawan"
     },
     {
@@ -17,7 +17,7 @@ const portfolioData = [
         image: "images/spin.png",
         category: "web",
         tech: ["HTML", "CSS", "Javascript"],
-        demo: "#",
+        demo: "images/spin.jpg",
         github: "https://github.com/baniputrabangsawan"
     },
 ];
