@@ -1,3 +1,4 @@
+// emailkonfigurasi
 // EmailJS Configuration
 // Inisialisasi EmailJS dengan Public Key Anda
 emailjs.init("WYUTpG5uGHo1aXZw1");
