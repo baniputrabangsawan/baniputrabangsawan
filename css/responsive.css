@@ -1,0 +1,633 @@
+/* Responsive Design */
+@media (max-width: 1024px) {
+:root {
+    --section-padding: 80px 0;
+}
+
+.nav {
+    padding: 0 1.5rem;
+}
+
+.hero-content {
+    padding: 0 1.5rem;
+}
+
+.about-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+}
+
+.contact-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1rem;
+}
+
+.footer-left,
+.footer-right {
+    text-align: center;
+}
+}
+
+@media (max-width: 768px) {
+:root {
+    --section-padding: 60px 0;
+}
+
+.nav-menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: var(--bg-primary);
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 0;
+    box-shadow: var(--shadow-medium);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all var(--transition-medium);
+}
+
+.nav-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.hamburger {
+    display: flex;
+}
+
+.theme-toggle {
+    order: -1;
+}
+
+.hero-image {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 1.5rem;
+}
+
+.timeline::after {
+    left: 20px;
+}
+
+.timeline-item {
+    width: 100%;
+    padding-left: 60px;
+    padding-right: 20px;
+}
+
+.timeline-item.left,
+.timeline-item.right {
+    left: 0%;
+}
+
+.timeline-item::after {
+    left: 10px;
+}
+
+.timeline-item.left .timeline-content::before,
+.timeline-item.right .timeline-content::before {
+    left: -30px;
+    border-right-color: var(--bg-secondary);
+    border-left-color: transparent;
+}
+
+.gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.skills-grid {
+    grid-template-columns: 1fr;
+}
+
+.stats {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.form-group.double {
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.container {
+    padding: 0 1rem;
+}
+
+.lightbox-nav {
+    display: none;
+}
+}
+
+@media (max-width: 480px) {
+.portfolio-filters {
+    gap: 0.5rem;
+}
+
+.filter-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+}
+
+.hero-cta {
+    padding: 0.8rem 1.5rem;
+}
+
+.stats {
+    grid-template-columns: 1fr;
+}
+
+.social-links {
+    gap: 0.5rem;
+}
+
+.social-link {
+    width: 45px;
+    height: 45px;
+}
+}
+
+/* Print styles */
+@media print {
+.header,
+.scroll-top,
+.theme-toggle,
+.hamburger,
+.scroll-indicator {
+    display: none;
+}
+
+body {
+    background: white;
+    color: black;
+}
+
+.hero {
+    background: white;
+    color: black;
+    min-height: auto;
+    padding: 2rem 0;
+}
+
+.section-title::after {
+    background: black;
+}
+}
+
+/* ===== MOBILE LIGHT MODE & HAMBURGER MENU FIXES ===== */
+
+/* 1. Fix hamburger menu positioning and visibility */
+@media (max-width: 768px) {
+    /* Header adjustments for mobile */
+    .header {
+        padding: 0.8rem 0;
+    }
+    
+    .nav {
+        padding: 0 1rem;
+        position: relative;
+    }
+    
+    /* Fix hamburger menu display */
+    .hamburger {
+        display: flex !important;
+        z-index: 1001;
+        order: 2;
+        margin-left: auto;
+    }
+    
+    /* Theme toggle positioning */
+    .theme-toggle {
+        order: 1;
+        margin-right: 1rem;
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+    
+    /* Fix navigation menu for mobile */
+    .nav-menu {
+        position: fixed;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 100%);
+        background: var(--bg-primary);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 2rem;
+        padding: 3rem 2rem;
+        box-shadow: var(--shadow-heavy);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-100%);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1000;
+        border-top: 3px solid var(--primary-color);
+    }
+    
+    .nav-menu.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    
+    /* Navigation links mobile styling */
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-link {
+        display: block;
+        width: 100%;
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        border-radius: 12px;
+        transition: all var(--transition-fast);
+        background: transparent;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .nav-link::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+        transition: left 0.5s ease;
+    }
+    
+    .nav-link:hover::before,
+    .nav-link.active::before {
+        left: 100%;
+    }
+    
+    .nav-link:hover,
+    .nav-link.active {
+        background: var(--accent-bg);
+        color: var(--primary-color);
+        transform: translateX(10px);
+    }
+    
+    /* Remove the after pseudo-element line for mobile */
+    .nav-link::after {
+        display: none;
+    }
+}
+
+/* 2. Light mode specific mobile fixes */
+[data-theme="light"] {
+    /* Enhanced mobile navigation for light mode */
+    @media (max-width: 768px) {
+        .nav-menu {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            border-top: 3px solid var(--primary-color);
+            box-shadow: 0 10px 40px rgba(15, 23, 42, 0.15);
+        }
+        
+        .nav-link {
+            color: var(--text-primary);
+            background: transparent;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            background: linear-gradient(135deg, var(--accent-bg), #dbeafe);
+            color: var(--primary-color);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+        }
+        
+        /* Fix hamburger color for light mode */
+        .hamburger span {
+            background: var(--text-primary);
+            transition: all var(--transition-fast);
+        }
+        
+        .hamburger.active span {
+            background: var(--primary-color);
+        }
+        
+        /* Theme toggle light mode mobile */
+        .theme-toggle {
+            background: var(--bg-secondary);
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            box-shadow: var(--shadow-light);
+        }
+        
+        .theme-toggle:hover {
+            background: var(--primary-color);
+            color: white;
+            box-shadow: var(--shadow-medium);
+        }
+    }
+}
+
+/* 3. Fix mobile container and section spacing for light mode */
+[data-theme="light"] {
+    @media (max-width: 768px) {
+        .container {
+            margin: 1rem;
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 2px solid var(--border-primary);
+            background: var(--bg-primary);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        /* Section specific mobile fixes */
+        .about-content {
+            gap: 2rem;
+        }
+        
+        .about-image {
+            max-width: 250px;
+            margin: 0 auto;
+        }
+        
+        .contact-content {
+            gap: 2rem;
+        }
+        
+        .contact-form {
+            padding: 2rem 1.5rem;
+            background: var(--bg-primary);
+            border: 2px solid var(--border-primary);
+            border-radius: 16px;
+            box-shadow: var(--shadow-light);
+        }
+        
+        .contact-item {
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-primary);
+            margin-bottom: 1rem;
+        }
+        
+        /* Timeline mobile fixes for light mode */
+        .timeline::after {
+            background: var(--gradient-primary);
+            box-shadow: 0 0 0 3px var(--bg-primary);
+        }
+        
+        .timeline-item::after {
+            background: var(--bg-primary);
+            border: 4px solid var(--primary-color);
+            box-shadow: 0 0 0 4px var(--bg-primary);
+        }
+        
+        .timeline-content {
+            background: var(--bg-primary);
+            border: 2px solid var(--border-primary);
+            box-shadow: var(--shadow-light);
+        }
+        
+        /* Skills section mobile */
+        .skill-category {
+            background: var(--bg-primary);
+            border: 2px solid var(--border-primary);
+            box-shadow: var(--shadow-light);
+        }
+        
+        /* Portfolio and gallery mobile */
+        .portfolio-item,
+        .gallery-item {
+            background: var(--bg-primary);
+            border: 2px solid var(--border-primary);
+            box-shadow: var(--shadow-light);
+        }
+        
+        /* Stats mobile */
+        .stat {
+            background: var(--bg-primary);
+            border: 2px solid var(--accent-border);
+            box-shadow: var(--shadow-medium);
+            padding: 1.5rem;
+        }
+    }
+}
+
+/* 4. Mobile hamburger animation improvements */
+@media (max-width: 768px) {
+    .hamburger {
+        width: 30px;
+        height: 30px;
+        padding: 5px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .hamburger span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background: var(--text-primary);
+        border-radius: 2px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transform-origin: center;
+    }
+    
+    /* Improved hamburger animation */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(7px, 7px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+        transform: scale(0);
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+}
+
+/* 5. Fix body scroll when menu is open */
+body.menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
+/* 6. Mobile typography adjustments for light mode */
+[data-theme="light"] {
+    @media (max-width: 768px) {
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+        
+        .hero-title {
+            font-size: 2.5rem;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+        }
+        
+        /* Form improvements */
+        .form-control {
+            padding: 1rem;
+            font-size: 1rem;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 2px solid var(--border-primary);
+        }
+        
+        .form-control:focus {
+            background: var(--bg-primary);
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        .submit-btn {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-heavy);
+        }
+    }
+}
+
+/* 7. Small mobile devices (480px and below) */
+@media (max-width: 480px) {
+    [data-theme="light"] {
+        .nav {
+            padding: 0 0.5rem;
+        }
+        
+        .container {
+            margin: 0.5rem;
+            padding: 1rem;
+        }
+        
+        .nav-menu {
+            padding: 2rem 1rem;
+        }
+        
+        .nav-link {
+            padding: 0.8rem 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .theme-toggle {
+            width: 35px;
+            height: 35px;
+            margin-right: 0.5rem;
+        }
+        
+        .hamburger {
+            width: 25px;
+            height: 25px;
+        }
+        
+        .contact-form {
+            padding: 1.5rem 1rem;
+        }
+        
+        .form-group.double {
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .hero-image {
+            width: 120px;
+            height: 120px;
+        }
+        
+        .stat {
+            padding: 1rem;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+        }
+    }
+}
+
+/* 8. Additional JavaScript helper styles */
+.nav-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-medium);
+}
+
+.nav-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 9. Accessibility improvements for mobile */
+@media (max-width: 768px) {
+    .nav-link:focus {
+        outline: 3px solid var(--primary-color);
+        outline-offset: 2px;
+    }
+    
+    .hamburger:focus {
+        outline: 2px solid var(--primary-color);
+        outline-offset: 2px;
+    }
+    
+    .theme-toggle:focus {
+        outline: 2px solid var(--primary-color);
+        outline-offset: 2px;
+    }
+}
+
+/* 10. Performance optimizations for mobile */
+@media (max-width: 768px) {
+    .nav-menu,
+    .hamburger,
+    .nav-link {
+        will-change: transform, opacity;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
+    
+    /* Reduce animations on lower-end devices */
+    @media (prefers-reduced-motion: reduce) {
+        .nav-menu,
+        .hamburger span,
+        .nav-link {
+            transition: none !important;
+            animation: none !important;
+        }
+    }
+}
