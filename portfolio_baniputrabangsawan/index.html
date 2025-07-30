@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional portfolio showcasing web development projects and skills">
+    <meta name="keywords" content="web developer, frontend, fullstack, portfolio">
+    <meta name="author" content="Bani Putra Bangsawa">
+    <title>Bani Putra Bangsawa - Web Developer</title>
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Animation css -->
+    <link rel="stylesheet" href="css/animation.css">
+    <!-- Responsive css -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Lightmode -->
+    <link rel="stylesheet" href="css/lightmode.css">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/bani.jpg">
+
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
+        <div class="loading-text">Loading Portfolio...</div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+
+    <!-- Particle Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Header -->
+   <!-- Updated Header Structure -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <a href="#home" class="logo">Bani Putra</a>
+            
+            <ul class="nav-menu" id="navMenu" role="navigation" aria-label="Main navigation">
+                <li><a href="#home" class="nav-link active" data-section="home" role="menuitem">Beranda</a></li>
+                <li><a href="#about" class="nav-link" data-section="about" role="menuitem">Tentang saya</a></li>
+                <li><a href="#education" class="nav-link" data-section="education" role="menuitem">Pendidikan</a></li>
+                <li><a href="#portfolio" class="nav-link" data-section="portfolio" role="menuitem">Portfolio</a></li>
+                <li><a href="#skills" class="nav-link" data-section="skills" role="menuitem">Keterampilan</a></li>
+                <li><a href="#gallery" class="nav-link" data-section="gallery" role="menuitem">Galeri</a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact" role="menuitem">Kontak</a></li>
+            </ul>
+            
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" type="button">
+                <i class="fas fa-moon"></i>
+            </button>
+            
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" type="button" 
+                    aria-expanded="false" aria-controls="navMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-image">
+                <img src="images/baniphoto.jpg">
+            </div>
+            <h1 class="hero-title">Hi, I'm <span class="typing-text" id="typingText"></span></h1>
+            <p class="hero-subtitle">Web Developer</p>
+            <a href="#portfolio" class="hero-cta">
+                <i class="fas fa-rocket"></i>
+                View My Work
+            </a>
+        </div>
+        <div class="scroll-indicator" onclick="scrollToSection('about')">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title fade-in">About Me</h2>
+            <div class="about-content">
+                <div class="about-image slide-in-left">
+                    <img src="images/bani.jpg" alt="About Bani Putra Bangsawan">
+                </div>
+                <div class="about-text slide-in-right">
+                    <p>Saya adalah seorang web developer dengan lebih dari 2 tahun pengalaman dalam membangun berbagai solusi digital yang efisien, inovatif, dan berdampak nyata. Ketertarikan saya pada dunia teknologi dimulai dari rasa ingin tahu tentang bagaimana aplikasi dan website bekerja, hingga akhirnya berkembang menjadi keahlian dalam merancang sistem yang memudahkan pekerjaan dan meningkatkan produktivitas.</p>
+                    
+                    <p>Fokus saya ada pada workflow automation menggunakan n8n, containerization dengan Docker, serta pengembangan solusi produktivitas yang terintegrasi melalui Google Sheets, Word, dan Excel. Dengan memanfaatkan teknologi ini, saya telah membantu banyak proses menjadi lebih otomatis, cepat, dan bebas kesalahan.</p>
+                    
+                    <p>Saya percaya bahwa software hebat tidak hanya diukur dari kualitas kodenya, tetapi juga dari seberapa besar manfaatnya bagi pengguna dan dampak positif yang dihasilkan dalam kehidupan sehari-hari maupun dunia kerja.</p>
+                    
+                    <div class="stats">
+                        <div class="stat fade-in">
+                            <span class="stat-number" data-count="50">0</span>
+                            <span class="stat-label">Project Complete</span>
+                        </div>
+                        <div class="stat fade-in">
+                            <span class="stat-number" data-count="30">0</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                        <div class="stat fade-in">
+                            <span class="stat-number" data-count="5">0</span>
+                            <span class="stat-label">Years Experiences</span>
+                        </div>
+                        <div class="stat fade-in">
+                            <span class="stat-number" data-count="15">2</span>
+                            <span class="stat-label">Awards Won</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education" id="education">
+        <div class="container">
+            <h2 class="section-title fade-in">Education</h2>
+            <div class="timeline">
+                <div class="timeline-item left fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">
+                            <i class="fas fa-calendar"></i>
+                            2026 - 2029
+                        </div>
+                         <h4 class="timeline-subtitle">SMK Telkom Makassar (Soon)</h4>
+                         <p class="timeline-description">
+                            (Soon)
+                        </p>
+                        <span class="timeline-gpa"></span>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">
+                            <i class="fas fa-calendar"></i>
+                            2023 - Present
+                        </div>
+                       <h4 class="timeline-subtitle">MTs Darussalam</h4>
+                        <p class="timeline-description">
+                            Menjabat sebagai Ketua OSIS dengan pengalaman memimpin berbagai kegiatan sekolah dan organisasi siswa. Selama di MTs Darussalam, saya dilatih dalam kepemimpinan, kerja sama tim, dan pengembangan karakter. Selain itu, saya juga mempelajari Akidah, Akhlak, Bahasa Arab, serta ilmu-ilmu umum seperti Matematika dan Sains, yang membentuk dasar akademik dan spiritual saya.
+                        </p>
+                        <span class="timeline-gpa">Rata-rata: 92/100</span>
+                    </div>
+                </div>
+                
+                <div class="timeline-item left fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">
+                            <i class="fas fa-certificate"></i>
+                            2023 - Present
+                        </div>
+                        <h3 class="timeline-title">Achievement</h3>
+                        <p class="timeline-description">
+                            • OSSC Juara 3 Bidang Ilmu Pengetahuan Sosial<br>
+                            • OSSC Juara 4 Bidang Bahasa Inggris<br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2 class="section-title fade-in">My Portfolio</h2>
+            
+            <div class="portfolio-filters fade-in">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Apps</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+                <button class="filter-btn" data-filter="design">UI/UX</button>
+            </div>
+            
+            <div class="portfolio-grid portfolio-card" id="portfolioGrid">
+                <!-- Portfolio items will be generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2 class="section-title fade-in">My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category fade-in">
+                    <h3><i class="fas fa-code"></i> Frontend Development</h3>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">HTML/CSS</span>
+                            <span class="skill-percentage">92%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="92"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">JavaScript</span>
+                            <span class="skill-percentage">86%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="86"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">React</span>
+                            <span class="skill-percentage">3%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="3"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Tailwind CSS</span>
+                            <span class="skill-percentage">89%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="89"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3><i class="fas fa-server"></i> Backend & Tools</h3>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Python</span>
+                            <span class="skill-percentage">13%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="13"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Docker</span>
+                            <span class="skill-percentage">87%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="87"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">n8n</span>
+                            <span class="skill-percentage">76%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="76"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Git/GitHub</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3><i class="fas fa-palette"></i> Design & Office</h3>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Figma</span>
+                            <span class="skill-percentage">6%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="6"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">SketchUp</span>
+                            <span class="skill-percentage">78%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="78"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Microsoft Excel</span>
+                            <span class="skill-percentage">88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="88"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Microsoft Word</span>
+                            <span class="skill-percentage">95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="95"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title fade-in">Gallery</h2>
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Gallery items will be generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title fade-in">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info slide-in-left">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Contact</h4>
+                            <p>+62 812-8968-2503</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email Address</h4>
+                            <p>baniputrabangsawan0@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Papua, Indonesia</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Response Time</h4>
+                            <p>Within 24 hours</p>
+                        </div>
+                    </div>
+                </div>
+                
+<form class="contact-form slide-in-right" id="contactForm">
+    <div class="form-group double">
+        <input type="text" class="form-control" id="firstName" name="nama_depan" placeholder="Nama depan" required>
+        <input type="text" class="form-control" id="lastName" name="nama_belakang" placeholder="Nama belakang" required>
+    </div>
+    
+    <!-- HANYA 1 EMAIL INPUT -->
+    <div class="form-group">
+        <input 
+            type="email" 
+            class="form-control" 
+            id="email" 
+            name="email" 
+            placeholder="Email" 
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            title="Masukkan email yang valid (contoh: contoh@gmail.com)" 
+            required>
+        <div class="error-message" id="emailError">Silakan masukkan email yang valid</div>
+    </div>
+    
+    <div class="form-group">
+        <input type="text" class="form-control" id="subject" name="subjek" value="Pesan kepada Bani Putra Bangsawan" readonly required>
+    </div>
+    
+    <div class="form-group">
+        <textarea class="form-control" id="message" rows="6" name="pesan" placeholder="Pesan" required></textarea>
+        <div class="error-message" id="messageError">Message must be at least 10 characters long</div>
+    </div>
+    
+    <button type="submit" class="submit-btn" id="submitBtn">
+        <div class="loading-spinner"></div>
+        <span class="btn-text">Kirim Pesan</span>
+    </button>
+</form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="copyright">
+            © 2025 Bani Putra Bangsawan. All rights reserved.
+        </div>
+        
+        <div class="social-links">
+            <!-- LinkedIn (Most professional) -->
+            <a href="https://www.linkedin.com/in/bani-putra-bangsawan-b2ab1b369?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-link linkedin" title="LinkedIn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+            </a>
+            
+            <!-- GitHub (Professional for developers) -->
+            <a href="https://github.com/baniputrabangsawan" class="social-link github" title="GitHub">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+            </a>
+            
+            <!-- Behance (Professional for designers) -->
+            <a href="https://www.behance.net/banipubangsaw" class="social-link behance" title="Behance">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 2-5.101 2-3.074 0-5.564-1.584-5.564-4.384 0-3.259 2.718-4.616 5.565-4.616 3.074 0 4.95 1.718 4.95 4.616 0 .267-.062.522-.062.522H15.79c-.094 1.518.697 2.152 1.717 2.152 0.796 0 1.392-.292 1.654-.856H22zm-6.885-2.333c.094-1.518-.697-2.152-1.717-2.152-.796 0-1.392.292-1.654.856h3.371zm-14.115-5.667c2.139 0 4.533.878 4.533 3.384 0 1.351-.783 2.274-1.888 2.706 1.428.205 2.465 1.007 2.465 2.706 0 2.784-2.465 3.904-5.11 3.904H0V9h2zm0 5.333c1.39 0 2.5-.438 2.5-1.5s-1.11-1.333-2.5-1.333H2v2.833h0zm0 5.334c1.577 0 3-0.5 3-1.667 0-1.167-1.423-1.667-3-1.667H2v3.334h0z"/>
+                </svg>
+            </a>
+            
+            <!-- Instagram (Professional creative presence) -->
+            <a href="https://www.instagram.com/baniptra__/profilecard/?igsh=Z252aTJqeXpycjc4" class="social-link instagram" title="Instagram">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+            </a>
+            
+            <!-- TikTok (Creative content) -->
+            <a href="https://tiktok.com" class="social-link tiktok" title="TikTok">
+                 <a href="https://www.tiktok.com/@baniputrabangsawan_?_t=ZS-8yG1GV0kAug&_r=1" class="social-link tiktok" title="TikTok">
+               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                   <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+               </svg>
+           </a>
+           
+           <!-- Facebook (Additional social presence) -->
+           <a href="https://www.facebook.com/share/1CHzMK7wcx/" class="social-link facebook" title="Facebook">
+               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+               </svg>
+           </a>
+       </div>
+       
+       <div class="location">
+           <svg class="location-icon" viewBox="0 0 24 24" fill="currentColor">
+               <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+           </svg>
+           Serui, South Yapen, Yapen Islands Regency, Papua
+       </div>
+   </div>
+</footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">
+                <i class="fas fa-times"></i>
+            </button>
+            <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">
+                <i class="fas fa-chevron-right"></i>
+           '' </button>
+            <img class="lightbox-image" id="lightboxImage" alt="Portfolio item">
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="js/emailkonfigurasi.js"></script> <!-- File JavaScript Anda -->
+    <script src="js/main.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/portfolio.js"></script>
+</body>
+</html>
