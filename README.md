@@ -49,18 +49,33 @@ const bani = {
 
 ## `> tech --stack`
 
+<h3 align="center">Languages, Frameworks & Tools</h3>
+
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,nextjs,tailwind,nodejs,python,go&perline=10" />
+  <img src="https://skillicons.dev/icons?i=html,css,js,ts,python&perline=5" />
 </p>
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=mysql,postgres,mongodb,supabase,docker,linux,nginx,git,github,vercel&perline=10" />
+  <img src="https://skillicons.dev/icons?i=react,nextjs,vue,flutter,tailwind&perline=5" />
 </p>
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=vscode,figma,postman,bash,powershell,cloudflare&perline=10" />
+  <img src="https://skillicons.dev/icons?i=nodejs,express,laravel,firebase&perline=4" />
 </p>
 
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=postgres,redis,sqlite&perline=3" />
+</p>
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=docker,linux,git,postman,figma&perline=5" />
+</p>
+
+<p align="center">
+  <a href="https://www.framer.com/">
+    <img src="https://www.vectorlogo.zone/logos/framer/framer-icon.svg" width="48" height="48" alt="Framer" />
+  </a>
+</p>
 ---
 
 ## `> projects --featured`
