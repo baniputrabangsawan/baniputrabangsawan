@@ -1,15 +1,19 @@
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:0969DA,100:00D9FF&height=220&section=header&text=BANI%20PUTRA%20BANGSAWAN&fontSize=42&fontColor=FFFFFF&animation=fadeIn&fontAlignY=35&desc=Full%20Stack%20Developer%20%7C%20AI%20Automation&descAlignY=55&descSize=17"/>
+<!-- ===================== HERO / HEADER ===================== -->
+
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=260&section=header&text=BANI%20PUTRA%20BANGSAWAN&fontSize=48&fontColor=FFFFFF&fontAlignY=38&desc=Full%20Stack%20Developer%20%7C%20AI%20Automation&descAlignY=60&descSize=20&animation=twinkling&color=0:000000,25:0B1120,50:172554,75:1E3A8A,100:06B6D4" />
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&duration=2500&pause=800&color=00D9FF&center=true&vCenter=true&width=700&lines=Full+Stack+Development;AI+Automation;Building+Modern+Digital+Products;Automation+Workflows+and+Systems;Turning+Ideas+Into+Real+Products" />
+  <img
+    src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=24&duration=2000&pause=700&color=22D3EE&center=true&vCenter=true&width=850&height=60&lines=Full+Stack+Development;AI+Automation;Workflow+Systems;Shipping+Useful+Products"
+    alt="Typing SVG"
+  />
 </p>
 
 <p align="center">
   <a href="https://github.com/baniputrabangsawan">
-    <img src="https://img.shields.io/github/followers/baniputrabangsawan?label=Followers&style=for-the-badge&logo=github&color=0969DA"/>
+    <img src="https://img.shields.io/github/followers/baniputrabangsawan?label=FOLLOWERS&style=for-the-badge&logo=github&color=1D4ED8" />
   </a>
-
-  <img src="https://komarev.com/ghpvc/?username=baniputrabangsawan&style=for-the-badge&color=0969DA&label=PROFILE+VIEWS"/>
+  <img src="https://komarev.com/ghpvc/?username=baniputrabangsawan&label=PROFILE+VIEWS&style=for-the-badge&color=0891B2" />
 </p>
 
 ---
@@ -104,17 +108,17 @@ AI-powered waste classification system designed for smarter waste management.
 ## `> github --stats`
 
 <p align="center">
-
   <img
     width="49%"
-    src="https://github-readme-stats.vercel.app/api?username=baniputrabangsawan&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00D9FF&icon_color=0969DA&text_color=C9D1D9"
+    src="https://github-stats-extended.vercel.app/api?username=baniputrabangsawan&show_icons=true&hide_border=true&bg_color=0D1117&title_color=22D3EE&icon_color=38BDF8&text_color=E2E8F0"
+    alt="GitHub Stats"
   />
 
   <img
     width="49%"
-    src="https://github-readme-stats.vercel.app/api/top-langs/?username=baniputrabangsawan&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00D9FF&text_color=C9D1D9"
+    src="https://github-stats-extended.vercel.app/api/top-langs/?username=baniputrabangsawan&layout=compact&hide_border=true&bg_color=0D1117&title_color=22D3EE&text_color=E2E8F0"
+    alt="Top Languages"
   />
-
 </p>
 
 ---
@@ -122,12 +126,11 @@ AI-powered waste classification system designed for smarter waste management.
 ## `> github --streak`
 
 <p align="center">
-
   <img
-    width="70%"
-    src="https://streak-stats.demolab.com?user=baniputrabangsawan&theme=tokyonight&hide_border=true&background=0D1117&stroke=0969DA&ring=00D9FF&fire=00D9FF&currStreakLabel=00D9FF"
+    width="75%"
+    src="https://streak-stats.demolab.com?user=baniputrabangsawan&theme=transparent&hide_border=true&background=0D111700&stroke=334155&ring=22D3EE&fire=38BDF8&currStreakNum=F8FAFC&sideNums=F8FAFC&currStreakLabel=22D3EE&sideLabels=94A3B8&dates=64748B"
+    alt="Bani Putra Bangsawan GitHub Streak"
   />
-
 </p>
 
 ---
@@ -135,24 +138,23 @@ AI-powered waste classification system designed for smarter waste management.
 ## `> github --activity`
 
 <p align="center">
-
   <img
     width="100%"
-    src="https://github-readme-activity-graph.vercel.app/graph?username=baniputrabangsawan&bg_color=0D1117&color=00D9FF&line=0969DA&point=FFFFFF&area=true&hide_border=true"
+    src="https://github-readme-activity-graph.vercel.app/graph?username=baniputrabangsawan&bg_color=0D1117&color=94A3B8&line=22D3EE&point=FFFFFF&area=true&area_color=0EA5E9&hide_border=true"
+    alt="GitHub Activity Graph"
   />
-
 </p>
 
 ---
 
-## `> github --achievements`
+## `> github --overview`
 
 <p align="center">
-
   <img
-    src="https://github-profile-trophy.vercel.app/?username=baniputrabangsawan&theme=algolia&no-frame=true&no-bg=true&margin-w=8&column=6"
+    width="70%"
+    src="https://github-stats-extended.vercel.app/api?username=baniputrabangsawan&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&bg_color=0D1117&title_color=22D3EE&icon_color=38BDF8&text_color=E2E8F0&ring_color=22D3EE"
+    alt="GitHub Overview"
   />
-
 </p>
 
 ---
