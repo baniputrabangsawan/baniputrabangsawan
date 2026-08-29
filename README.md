@@ -1,7 +1,7 @@
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:0969DA,100:00D9FF&height=220&section=header&text=BANI%20PUTRA%20BANGSAWAN&fontSize=42&fontColor=FFFFFF&animation=fadeIn&fontAlignY=35&desc=Creative%20Developer%20%7C%20Software%20Developer%20%7C%20DevOps&descAlignY=55&descSize=17"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:0969DA,100:00D9FF&height=220&section=header&text=BANI%20PUTRA%20BANGSAWAN&fontSize=42&fontColor=FFFFFF&animation=fadeIn&fontAlignY=35&desc=Full%20Stack%20Developer%20%7C%20AI%20Automation&descAlignY=55&descSize=17"/>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&duration=2500&pause=800&color=00D9FF&center=true&vCenter=true&width=700&lines=Building+Modern+Digital+Experiences;Web+Development+%26+Automation;DevOps+%26+Cloud+Infrastructure;Exploring+Cybersecurity;Turning+Ideas+Into+Real+Products" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&duration=2500&pause=800&color=00D9FF&center=true&vCenter=true&width=700&lines=Full+Stack+Development;AI+Automation;Building+Modern+Digital+Products;Automation+Workflows+and+Systems;Turning+Ideas+Into+Real+Products" />
 </p>
 
 <p align="center">
@@ -17,63 +17,42 @@
 ## `> whoami`
 
 ```ts
+## `> whoami`
+
+```ts
 const bani = {
   name: "Bani Putra Bangsawan",
 
   role: [
-    "Creative Developer",
-    "Software Developer",
-    "DevOps Enthusiast"
+    "Full Stack Developer",
+    "AI Automation"
   ],
 
   interests: [
     "Web Development",
-    "Cybersecurity",
+    "Full Stack Applications",
     "Automation",
-    "Cloud & DevOps",
-    "Artificial Intelligence"
+    "Artificial Intelligence",
+    "Cyber Security"
   ],
 
   currentlyLearning: [
-    "Cybersecurity",
-    "DevOps",
-    "Cloud Infrastructure",
-    "Advanced Web Development"
+    "AI Automation",
+    "Advanced Full Stack Development",
+    "Cyber Security",
+    "Scalable Systems"
   ],
 
-  philosophy: "Build. Learn. Automate. Improve."
+  philosophy: "Build. Automate. Improve."
 };
 ```
 
 ---
-
 ## `> tech --stack`
 
-<h3 align="center">Languages, Frameworks & Tools</h3>
-
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=html,css,js,ts,python&perline=5" />
-</p>
-
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=react,nextjs,vue,flutter,tailwind&perline=5" />
-</p>
-
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=nodejs,express,laravel,firebase&perline=4" />
-</p>
-
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=postgres,redis,sqlite&perline=3" />
-</p>
-
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=docker,linux,git,postman,figma&perline=5" />
-</p>
-
-<p align="center">
-  <a href="https://www.framer.com/">
-    <img src="https://www.vectorlogo.zone/logos/framer/framer-icon.svg" width="48" height="48" alt="Framer" />
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=html,css,tailwind,js,ts,react,nextjs,nodejs,python,vue,flutter,express,supabase,laravel,firebase,postgres,redis,sqlite,prisma,docker,linux,git,postman,figma" />
+  <a href="https://www.framer.com/" target="_blank" rel="noreferrer">
   </a>
 </p>
 ---
@@ -183,7 +162,7 @@ AI-powered waste classification system designed for smarter waste management.
 ```yaml
 Developer:
   Name: Bani Putra Bangsawan
-  Role: Creative Developer / Software Developer
+  Role: Software Developer & AI Automation
 
 Status:
   Building: Modern Web Applications
