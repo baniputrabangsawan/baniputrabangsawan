@@ -2,20 +2,6 @@
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=260&section=header&text=BANI%20PUTRA%20BANGSAWAN&fontSize=48&fontColor=FFFFFF&fontAlignY=38&desc=Full%20Stack%20Developer%20%7C%20AI%20Automation&descAlignY=60&descSize=20&animation=twinkling&color=0:000000,25:0B1120,50:172554,75:1E3A8A,100:06B6D4" />
 
-<p align="center">
-  <img
-    src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=24&duration=2000&pause=700&color=22D3EE&center=true&vCenter=true&width=850&height=60&lines=Full+Stack+Development;AI+Automation;Workflow+Systems;Shipping+Useful+Products"
-    alt="Typing SVG"
-  />
-</p>
-
-<p align="center">
-  <a href="https://github.com/baniputrabangsawan">
-    <img src="https://img.shields.io/github/followers/baniputrabangsawan?label=FOLLOWERS&style=for-the-badge&logo=github&color=1D4ED8" />
-  </a>
-  <img src="https://komarev.com/ghpvc/?username=baniputrabangsawan&label=PROFILE+VIEWS&style=for-the-badge&color=0891B2" />
-</p>
-
 ---
 
 ## `> whoami`
