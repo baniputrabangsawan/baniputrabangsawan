@@ -41,10 +41,11 @@ const bani = {
 ## `> tech --stack`
 
 <p align="left">
-  <img src="https://skillicons.dev/icons?i=html,css,tailwind,js,ts,react,nextjs,nodejs,python,vue,flutter,express,supabase,laravel,firebase,postgres,redis,sqlite,prisma,docker,linux,git,postman,nginx,figma" />
+  <img src="https://skillicons.dev/icons?i=html,css,tailwind,js,ts,react,nextjs,nodejs,python,vue,threejs,flutter,express,supabase,laravel,firebase,postgres,redis,sqlite,prisma,docker,linux,git,postman,nginx,figma" />
   <a href="https://www.framer.com/" target="_blank" rel="noreferrer">
   </a>
 </p>
+
 ---
 
 ## `> projects --featured`
