@@ -65,7 +65,7 @@ Modern digital studio focused on premium websites for businesses and UMKM.
 
 <br>
 
-<a href="https://arunastudio.vercel.app/">
+<a href="https://arunastudio.site">
   <img src="https://img.shields.io/badge/LIVE_DEMO-0969DA?style=for-the-badge&logo=vercel&logoColor=white">
 </a>
 
