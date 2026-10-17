@@ -92,34 +92,21 @@ text { white-space: pre; }
 <text x="30" y="340" fill="#58a6ff" font-weight="bold">─── HERMES CAPABILITY MATRIX </text>
 <line x1="255" y1="336" x2="930" y2="336" stroke="#21262d" stroke-width="1"/>
 
-<text x="30" y="362">
-  <tspan fill="#7d8590">. </tspan><tspan fill="#ffa657">Full Stack Web</tspan>
-</text>
-<text x="180" y="362" fill="#22d3ee" font-weight="bold">[██████████████░░]</text>
-<text x="340" y="362" fill="#e6edf3" font-weight="bold">88%</text>
-<text x="385" y="362" fill="#7d8590">· Next.js 15, React 19, TypeScript, Tailwind CSS</text>
+<text x="30" y="362" fill="#ffa657">. Full Stack Web</text>
+<line x1="200" y1="358" x2="520" y2="358" class="dot-lead"/>
+<text x="930" y="362" text-anchor="end" fill="#e6edf3">Next.js 15, React 19, TypeScript, Tailwind CSS</text>
 
-<text x="30" y="380">
-  <tspan fill="#7d8590">. </tspan><tspan fill="#ffa657">AI &amp; Automation</tspan>
-</text>
-<text x="180" y="380" fill="#22d3ee" font-weight="bold">[████████████████]</text>
-<text x="340" y="380" fill="#e6edf3" font-weight="bold">96%</text>
-<text x="385" y="380" fill="#7d8590">· Autonomous Agents, LLM Pipelines, Prompt Ops</text>
+<text x="30" y="380" fill="#ffa657">. AI &amp; Automation</text>
+<line x1="200" y1="376" x2="520" y2="376" class="dot-lead"/>
+<text x="930" y="380" text-anchor="end" fill="#e6edf3">Autonomous Agents, LLM Pipelines, Prompt Ops</text>
 
-<text x="30" y="398">
-  <tspan fill="#7d8590">. </tspan><tspan fill="#ffa657">Backend &amp; DB</tspan>
-</text>
-<text x="180" y="398" fill="#22d3ee" font-weight="bold">[████████████░░░░]</text>
-<text x="340" y="398" fill="#e6edf3" font-weight="bold">80%</text>
-<text x="385" y="398" fill="#7d8590">· Node.js, Python, Supabase, PostgreSQL, APIs</text>
+<text x="30" y="398" fill="#ffa657">. Backend &amp; DB</text>
+<line x1="200" y1="394" x2="520" y2="394" class="dot-lead"/>
+<text x="930" y="398" text-anchor="end" fill="#e6edf3">Node.js, Python, Supabase, PostgreSQL, APIs</text>
 
-<text x="30" y="416">
-  <tspan fill="#7d8590">. </tspan><tspan fill="#ffa657">Systems &amp; DevOps</tspan>
-</text>
-<text x="180" y="416" fill="#22d3ee" font-weight="bold">[██████████░░░░░░]</text>
-<text x="340" y="416" fill="#e6edf3" font-weight="bold">72%</text>
-<text x="385" y="416" fill="#7d8590">· Docker, Linux Shell, Git, Nginx, CI/CD Actions</text>
-
+<text x="30" y="416" fill="#ffa657">. Systems &amp; DevOps</text>
+<line x1="200" y1="412" x2="520" y2="412" class="dot-lead"/>
+<text x="930" y="416" text-anchor="end" fill="#e6edf3">Docker, Linux Shell, Git, Nginx, CI/CD Actions</text>
 <!-- ACTIVE DAEMONS & PRODUCTION DEPLOYMENTS -->
 <text x="30" y="448" fill="#58a6ff" font-weight="bold">─── ACTIVE DAEMONS &amp; PRODUCTION DEPLOYMENTS </text>
 <line x1="380" y1="444" x2="930" y2="444" stroke="#21262d" stroke-width="1"/>

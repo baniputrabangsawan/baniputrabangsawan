@@ -1,8 +1,8 @@
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/terminal-dark.svg?v=2">
-    <source media="(prefers-color-scheme: light)" srcset="assets/terminal-light.svg?v=2">
-    <img alt="Bani Putra Bangsawan's Hermes Terminal" src="assets/terminal-dark.svg?v=2" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="assets/terminal-dark.svg?v=3">
+    <source media="(prefers-color-scheme: light)" srcset="assets/terminal-light.svg?v=3">
+    <img alt="Bani Putra Bangsawan's Hermes Terminal" src="assets/terminal-dark.svg?v=3" width="100%">
   </picture>
 </div>
 
