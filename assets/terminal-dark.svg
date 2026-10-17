@@ -64,9 +64,9 @@ text { white-space: pre; }
   <tspan fill="#ffa657" font-weight="bold">Philosophy</tspan><tspan fill="#7d8590"> : </tspan><tspan fill="#3fb950">"Think → Build → Automate → Ship"</tspan>
 </text>
 
-<!-- [01] SYSTEM & ENVIRONMENT -->
-<text x="30" y="214" fill="#58a6ff" font-weight="bold">─── [01] SYSTEM &amp; ENVIRONMENT </text>
-<line x1="265" y1="210" x2="930" y2="210" stroke="#21262d" stroke-width="1"/>
+<!-- SYSTEM & ENVIRONMENT -->
+<text x="30" y="214" fill="#58a6ff" font-weight="bold">─── SYSTEM &amp; ENVIRONMENT </text>
+<line x1="230" y1="210" x2="930" y2="210" stroke="#21262d" stroke-width="1"/>
 
 <text x="30" y="236" fill="#ffa657">. Operating Systems</text>
 <line x1="200" y1="232" x2="520" y2="232" class="dot-lead"/>
@@ -88,9 +88,9 @@ text { white-space: pre; }
 <line x1="200" y1="304" x2="540" y2="304" class="dot-lead"/>
 <text x="930" y="308" text-anchor="end" fill="#e6edf3">"Code is poetry written in logic." ~ Anonymous</text>
 
-<!-- [02] HERMES CAPABILITY MATRIX -->
-<text x="30" y="340" fill="#58a6ff" font-weight="bold">─── [02] HERMES CAPABILITY MATRIX </text>
-<line x1="290" y1="336" x2="930" y2="336" stroke="#21262d" stroke-width="1"/>
+<!-- HERMES CAPABILITY MATRIX -->
+<text x="30" y="340" fill="#58a6ff" font-weight="bold">─── HERMES CAPABILITY MATRIX </text>
+<line x1="255" y1="336" x2="930" y2="336" stroke="#21262d" stroke-width="1"/>
 
 <text x="30" y="362">
   <tspan fill="#7d8590">. </tspan><tspan fill="#ffa657">Full Stack Web</tspan>
@@ -120,9 +120,9 @@ text { white-space: pre; }
 <text x="340" y="416" fill="#e6edf3" font-weight="bold">72%</text>
 <text x="385" y="416" fill="#7d8590">· Docker, Linux Shell, Git, Nginx, CI/CD Actions</text>
 
-<!-- [03] ACTIVE DAEMONS & PRODUCTION DEPLOYMENTS -->
-<text x="30" y="448" fill="#58a6ff" font-weight="bold">─── [03] ACTIVE DAEMONS &amp; PRODUCTION DEPLOYMENTS </text>
-<line x1="420" y1="444" x2="930" y2="444" stroke="#21262d" stroke-width="1"/>
+<!-- ACTIVE DAEMONS & PRODUCTION DEPLOYMENTS -->
+<text x="30" y="448" fill="#58a6ff" font-weight="bold">─── ACTIVE DAEMONS &amp; PRODUCTION DEPLOYMENTS </text>
+<line x1="380" y1="444" x2="930" y2="444" stroke="#21262d" stroke-width="1"/>
 
 <text x="30" y="470" fill="#7d8590">PID</text>
 <text x="85" y="470" fill="#7d8590">PROCESS NAME</text>
@@ -153,9 +153,9 @@ text { white-space: pre; }
 <text x="430" y="536" fill="#e6edf3">TypeScript · Autonomous Security</text>
 <text x="750" y="536" fill="#7d8590">github/aegis</text>
 
-<!-- [04] TELEMETRY & NETWORK NODES -->
-<text x="30" y="568" fill="#58a6ff" font-weight="bold">─── [04] TELEMETRY &amp; NETWORK NODES </text>
-<line x1="305" y1="564" x2="930" y2="564" stroke="#21262d" stroke-width="1"/>
+<!-- TELEMETRY & NETWORK NODES -->
+<text x="30" y="568" fill="#58a6ff" font-weight="bold">─── TELEMETRY &amp; NETWORK NODES </text>
+<line x1="270" y1="564" x2="930" y2="564" stroke="#21262d" stroke-width="1"/>
 
 <!-- 2-Column Telemetry Box: Perfectly Symmetrical 440px each with 20px gap -->
 <!-- Left Box: GitHub Telemetry -->
