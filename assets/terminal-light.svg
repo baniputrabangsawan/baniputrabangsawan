@@ -70,7 +70,7 @@ text { white-space: pre; }
 
 <text x="30" y="236" fill="#953800">. Operating Systems</text>
 <line x1="200" y1="232" x2="520" y2="232" class="dot-lead"/>
-<text x="930" y="236" text-anchor="end" fill="#1f2328">Linux (Mint, Ubuntu), macOS, Windows, Android</text>
+<text x="930" y="236" text-anchor="end" fill="#1f2328">Linux Mint</text>
 
 <text x="30" y="254" fill="#953800">. Education &amp; Host</text>
 <line x1="200" y1="250" x2="550" y2="250" class="dot-lead"/>
@@ -86,7 +86,7 @@ text { white-space: pre; }
 
 <text x="30" y="308" fill="#953800">. Quote of the Day</text>
 <line x1="200" y1="304" x2="540" y2="304" class="dot-lead"/>
-<text x="930" y="308" text-anchor="end" fill="#1f2328">"Code is poetry written in logic." ~ Anonymous</text>
+<text x="930" y="308" text-anchor="end" fill="#1f2328">"First, solve the problem. Then, write the code." ~ John Johnson</text>
 
 <!-- HERMES CAPABILITY MATRIX -->
 <text x="30" y="340" fill="#0969da" font-weight="bold">─── HERMES CAPABILITY MATRIX </text>
