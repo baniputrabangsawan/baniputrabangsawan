@@ -78,11 +78,11 @@ text { white-space: pre; }
 
 <text x="30" y="272" fill="#953800">. Active Uptime</text>
 <line x1="200" y1="268" x2="620" y2="268" class="dot-lead"/>
-<text x="930" y="272" text-anchor="end" fill="#1f2328">4+ Years Continuous Development</text>
+<text x="930" y="272" text-anchor="end" fill="#1f2328">2+ Years Continuous Development</text>
 
 <text x="30" y="290" fill="#953800">. Primary Editors</text>
 <line x1="200" y1="286" x2="650" y2="286" class="dot-lead"/>
-<text x="930" y="290" text-anchor="end" fill="#1f2328">VS Code, Zed, Cursor, Neovim</text>
+<text x="930" y="290" text-anchor="end" fill="#1f2328">VS Code, Antigravity IDE</text>
 
 <text x="30" y="308" fill="#953800">. Quote of the Day</text>
 <line x1="200" y1="304" x2="540" y2="304" class="dot-lead"/>
